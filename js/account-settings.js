@@ -5,6 +5,23 @@ import { monitorAuthState } from './shared/auth.js';
 // DOM Elements
 const profileForm = document.getElementById('profile-settings-form');
 const alertContainer = document.getElementById('alert-container');
+const genderSelect = document.getElementById('gender-select');
+const profilePicture = document.getElementById('profile-picture');
+
+
+
+// Event listener for gender change
+let selectedGender = "male";
+genderSelect.addEventListener('change', () => {
+    selectedGender = genderSelect.value;
+    // Change the profile picture based on selected gender
+    if (selectedGender === "male") {
+        profilePicture.src = "../img/Man.png";
+    } else if (selectedGender === "female") {
+        profilePicture.src = "../img/Women.png"; // Adjust path as needed
+    }
+});
+
 
 /**
  * Loads user data when authenticated and populates the form fields.
@@ -26,6 +43,18 @@ async function loadUserData(userId) {
             document.getElementById('phone-number').value = userData.phoneNumber || '';
             document.getElementById('address').value = userData.city || '';
             document.getElementById('preferred-gift-categories').value = userData.preferredGiftCategories || '';
+
+            // Set gender and profile picture based on user data
+            if (userData.gender) {
+                genderSelect.value = userData.gender;
+                selectedGender = userData.gender; // Set gender from Firebase
+            }
+            if (userData.profilePicture) {
+                profilePicture.src = userData.profilePicture;
+            } else {
+                // Default to male if no picture is saved
+                profilePicture.src = selectedGender === "male" ? "../img/Man.png" : "../img/Woman.png";
+            }
         } else {
             showAlert('warning', 'User data not found.');
         }
@@ -54,6 +83,8 @@ profileForm.addEventListener('submit', async (e) => {
         phoneNumber: document.getElementById('phone-number').value,
         city: document.getElementById('address').value,
         preferredGiftCategories: document.getElementById('preferred-gift-categories').value,
+        gender: selectedGender, // Save selected gender
+        profilePicture: profilePicture.src, // Save the updated profile picture URL
     };
 
     try {
@@ -91,4 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function showAlert(type, message) {
     alertContainer.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+    setTimeout(() => {
+        alertContainer.innerHTML = ''; // Clear the alert after 5 seconds
+    }, 5000);
 }

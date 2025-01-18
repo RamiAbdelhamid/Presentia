@@ -20,7 +20,7 @@ registrationForm.addEventListener('submit', async (e) => {
     const phoneNumber = document.getElementById('phone-number').value.trim();
     const address = document.getElementById('address').value;
     const preferredGiftCategory = document.getElementById('preferred-gift-categories').value;
-
+    
     // Validate phone
     const phoneRegex = /^(077|078|079)\d{7}$/;
     if (!phoneRegex.test(phoneNumber)) {

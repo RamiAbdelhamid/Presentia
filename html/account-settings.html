@@ -80,13 +80,18 @@
                 <div class="card text-center">
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body">
-                        <img class="img-account-profile rounded-circle mb-3"
-                            src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="Profile Picture">
-                        <div class="text-muted mb-3">JPG or PNG no larger than 5 MB</div>
-                        <button class="btn btn-primary btn-sm">Upload New Image</button>
+                        <!-- Image src will be dynamically set based on gender -->
+                        <img id="profile-picture" class="img-account-profile rounded-circle mb-3" 
+                            src="..\img\Man.png" alt="Profile Picture">
+                        <div class="text-muted mb-3">Select your gender</div>
+                        <select id="gender-select" class="form-control">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
                     </div>
                 </div>
             </div>
+
 
             <!-- Account Details Section -->
             <div class="col-md-8">
@@ -94,6 +99,7 @@
                     <div class="card-header">Account Details</div>
                     <div class="card-body">
                         <form id="profile-settings-form">
+                            <div id="alert-container"></div>
                             <div class="form-group">
                                 <label for="first-name" class="form-label">First Name</label>
                                 <input
@@ -202,6 +208,7 @@
     <script src="../js/shared/navbar.js" type="module" defer></script> 
     <script src="../js/shared/footer.js" defer></script>
     <script src="../js/account-settings.js" type="module"></script>
+
 </body>
 
 </html>

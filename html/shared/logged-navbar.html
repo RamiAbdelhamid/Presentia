@@ -29,6 +29,39 @@
             font-size: large;
             margin-left: 0.5rem;
         }
+
+        /* Profile Menu Styles */
+        .profile-menu {
+            z-index: 50;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            width: 12rem;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.375rem;
+            display: none;
+        }
+
+        .profile-menu.show {
+            display: block;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-profile-menu {
+            z-index: 50;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .mobile-profile-menu.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -57,13 +90,19 @@
 
                     <!-- Profile Menu (Desktop) -->
                     <div class="relative">
-                        <img src="/Presentia/img/blue flower.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" @click="profileOpen = !profileOpen">
-                        <div class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden" :class="{'block': profileOpen, 'hidden': !profileOpen}">
-                            <a href="/Presentia/html/account-settings.html" class="block px-4 py-2 text-sm text-gray-700">Account Settings</a>
-                            <a href="/Presentia/html/wishlist.html" class="block px-4 py-2 text-sm text-gray-700">Wishlist</a>
-                            <a href="/Presentia/html/login.html" id="logout-button" class="block px-4 py-2 text-sm text-gray-700">Logout</a>
+                        <img id="navbar-profile-picture" src="..\img\Man.png" 
+                            alt="Profile" class="w-10 h-10 rounded-full cursor-pointer navbar-profile-photo" 
+                            @click="profileOpen = !profileOpen">
+                        <div class="profile-menu" :class="{'show': profileOpen}">
+                            <a href="/Presentia/html/account-settings.html" 
+                                class="block px-4 py-2 text-sm text-gray-700">Account Settings</a>
+                            <a href="/Presentia/html/wishlist.html" 
+                                class="block px-4 py-2 text-sm text-gray-700">Wishlist</a>
+                            <a href="/Presentia/html/login.html" id="logout-button" 
+                                class="block px-4 py-2 text-sm text-gray-700">Logout</a>
                         </div>
                     </div>
+                    
                 </div>
 
                 <!-- Mobile Profile Menu Icon -->
@@ -73,7 +112,7 @@
             </div>
 
             <!-- Mobile Profile Menu -->
-            <div x-show="mobileProfileMenuOpen" @click.away="mobileProfileMenuOpen = false" class="lg:hidden">
+            <div x-show="mobileProfileMenuOpen" @click.away="mobileProfileMenuOpen = false" class="mobile-profile-menu" :class="{'show': mobileProfileMenuOpen}">
                 <div class="bg-white p-4 space-y-4">
                     <!-- Other Links (Home, Shop, Contact) for Mobile -->
                     <a href="home.html" class="block px-4 py-2 text-sm text-gray-700">Home</a>
@@ -89,8 +128,7 @@
             </div>
         </nav>
     </header>
-        <script type="module" src="/Presentia/js/shared/auth.js"></script>
-        <script type="module" src="/Presentia/js/shared/navbar.js"></script>
-
+    <script type="module" src="/Presentia/js/shared/auth.js"></script>
+    <script type="module" src="/Presentia/js/shared/navbar.js"></script>
 </body>
 </html>
