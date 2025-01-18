@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        nav {
+            background-color: #F9ECE6;
+            color: #514F4F;
+            position: relative;
+        }
+        nav a, nav button {
+            color: #514F4F;
+        }
+        .login-gtn {
+            background-color: #514F4F;
+            color: white;
+        }
+        .hamburger-menu {
+            background-color: #F9ECE6;
+        }
+        .logo {
+            font-family: cursive;
+            font-size: large;
+        }
+        .links:hover {
+            font-size: large;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav x-data="{ open: false, profileOpen: false, mobileProfileMenuOpen: false }" class="bg-[#F9ECE6] text-[#514F4F] shadow-lg w-full">
+            <div class="container mx-auto flex justify-between items-center h-16 px-4 md:px-8">
+                <!-- Logo -->
+                <div class="logo flex items-center">
+                    <a href="home.html" class="font-semibold text-xl">Presentia</a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex items-center w-1/2 lg:w-1/3">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="Search..." class="rounded-full border border-gray-300 px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-400" />
+                    </div>
+                </div>
+
+                <!-- Desktop Links and Profile Menu -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <!-- Links for desktop -->
+                    <a href="home.html" class="links">Home</a>
+                    <a href="shop.html" class="links">Shop</a>
+                    <a href="contact.html" class="links">Contact</a>
+                    <a href="about.html" class="links">About Us</a>
+
+                    <!-- Profile Menu (Desktop) -->
+                    <div class="relative">
+                        <img src="/Presentia/img/blue flower.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" @click="profileOpen = !profileOpen">
+                        <div class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden" :class="{'block': profileOpen, 'hidden': !profileOpen}">
+                            <a href="/Presentia/html/account-settings.html" class="block px-4 py-2 text-sm text-gray-700">Account Settings</a>
+                            <a href="/Presentia/html/wishlist.html" class="block px-4 py-2 text-sm text-gray-700">Wishlist</a>
+                            <a href="/Presentia/html/login.html" id="logout-button" class="block px-4 py-2 text-sm text-gray-700">Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Profile Menu Icon -->
+                <div class="lg:hidden flex items-center space-x-4">
+                    <img src="/Presentia/img/blue flower.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" @click="mobileProfileMenuOpen = !mobileProfileMenuOpen">
+                </div>
+            </div>
+
+            <!-- Mobile Profile Menu -->
+            <div x-show="mobileProfileMenuOpen" @click.away="mobileProfileMenuOpen = false" class="lg:hidden">
+                <div class="bg-white p-4 space-y-4">
+                    <!-- Other Links (Home, Shop, Contact) for Mobile -->
+                    <a href="home.html" class="block px-4 py-2 text-sm text-gray-700">Home</a>
+                    <a href="shop.html" class="block px-4 py-2 text-sm text-gray-700">Shop</a>
+                    <a href="contact.html" class="block px-4 py-2 text-sm text-gray-700">Contact</a>
+                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700">About Us</a>
+
+                    <!-- Profile Menu Links for Mobile -->
+                    <a href="account-settings.html" class="block px-4 py-2 text-sm text-gray-700">Account Settings</a>
+                    <a href="wishlist.html" class="block px-4 py-2 text-sm text-gray-700">Wishlist</a>
+                    <a href="/Presentia/html/login.html" id="logout-button" class="block px-4 py-2 text-sm text-gray-700">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <script type="module" src="/Presentia/js/shared/auth.js"></script>
+        <script type="module" src="/Presentia/js/shared/navbar.js"></script>
+
+</body>
+</html>

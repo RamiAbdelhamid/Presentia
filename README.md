@@ -5,7 +5,7 @@ Welcome to **Presentia Store**! This project showcases an e-commerce platform fe
 ---
 
 ## 👨‍💻 About the Developer  
-I'm Hasan Omar Hasan Mansour, a passionate MERN-Stack Developer & Java Developer. I love crafting innovative web applications that make an impact.
+Hasan, Rami, Ahmad, Belal, Ghofran 
 
 ---
 

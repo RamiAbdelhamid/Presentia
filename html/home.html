@@ -1,20 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/Presentia/css/home.css">
+
     <title>Presentia</title>
 </head>
+
 <body>
     <!--Navbar -->
     <nav id="navbar-placeholder"></nav>
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- slider hero section start -->
+
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active hero-carousel-item c-item">
+
+                <img src="/Presentia/img/img1.jpg" class="d-block w-100 hero-carousel-img" class="c-img" alt="">
+
+                <div class="carousel-caption top-0 mt-4">
+                    <h1 class="display-1 fw-bolder text-capitalize">Welcome To Our Gift Shop</h1>
+
+
+                    <button class="btn btn-primary custom px-4 py-2 fs-5 mt-5" class="custom-btn-primary">Shop
+                        Now</button>
+                </div>
+            </div>
+            <div class="carousel-item hero-carousel-item c-item">
+                <img src="/Presentia/img/slider2.jpg" class="d-block w-100 hero-carousel-img" class="c-img" alt="">
+
+                <div class="carousel-caption top-0 mt-4">
+                    <p class="display-1 fw-bolder text-capitalize">Love in Every Petal, Sweetness in Every Bite</p>
+                    <button class="btn btn-primary px-4 py-2 fs-5 mt-5" class="custom-btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#booking-modal">Shop Now</button>
+                </div>
+            </div>
+            <div class="carousel-item hero-carousel-item c-item">
+                <img src="/Presentia/img/slider3.jpg" class="d-block w-100 hero-carousel-img" class="c-img" alt="Slide 3">
+                <div class="carousel-caption top-0 mt-4">
+                    <p class="display-1 fw-bolder text-capitalize">Say It with Flowers, Sweeten It with Chocolate</p>
+                    <button class="btn btn-primary px-4 py-2 fs-5 mt-5" class="custom-btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#booking-modal">Shop Now</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br><br>
+    <!-- slider end -->
+
+
+    <!-- products starts -->
+    <h2 class="producthedar">Latest Products</h2>
+
+
+
+    <div class="productscon">
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Presentia/img/a3def3c7d3b66517a79764eedd012cbe.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <br>
+                <p>Price 5 JD</p>
+
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Presentia/img/a3def3c7d3b66517a79764eedd012cbe.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <br>
+                <p>Price 5 JD</p>
+
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="/Presentia/img/a3def3c7d3b66517a79764eedd012cbe.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <br>
+                <p>Price 5 JD</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="productscon2">
+
+
+
+
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Presentia/img/a3def3c7d3b66517a79764eedd012cbe.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <br>
+                <p>Price 5 JD</p>
+
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Presentia/img/a3def3c7d3b66517a79764eedd012cbe.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <br>
+                <p>Price 5 JD</p>
+
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="/Presentia/img/a3def3c7d3b66517a79764eedd012cbe.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <br>
+                <p>Price 5 JD</p>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="prodbutton">
+        <button class="btn btn-primary custom-btn-primary">Shop Now</button>
+    </div>
+    <!-- products end -->
+    <br><br>
+
+
+
+    <!-- new arrival starts -->
+    <section class="new-arrivals-section">
+        <div class="new-arrivals-container">
+            <div class="new-arrivals-content">
+                <div class="new-arrivals-image">
+                    <img class="new-arrivals-blueflower" src="/Presentia/img/blue flower.jpg" alt="Flower bouquet">
+                </div>
+                <div class="new-arrivals-text">
+                    <h2>NEW ARRIVALS</h2>
+                    <p>This is a beautiful bouquet of flowers primarily featuring blue and white tulips. The arrangement
+                        is
+                        elegantly wrapped in layers of semi-transparent white and deep blue wrapping paper, adding
+                        sophistication and grace to the presentation.</p>
+
+                    <div class="shop-now-button">
+                        <button class="btn btn-primary custom-btn-primary">Shop Now</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- new arrival ends -->
+    <br><br><br><br>
+
+
+    <!-- why shop with us starts -->
+    <div class="row mb-3 text-center">
+
+        <h1 class="whysection">Why Shop With Us</h2>
+            <div class="col-md-4 themed-grid-col"><img class="why-shop-delivery" src="/Presentia/img/delivery (1).png" alt="">
+            </div>
+            <div class="col-md-4 themed-grid-col"><img class="why-shop-free-shipping" src="/Presentia/img/free shipping.png"
+                    alt=""></div>
+            <div class="col-md-4 themed-grid-col"><img class="why-shop-best-quality" src="/Presentia/img/best quilty.png" alt="">
+            </div>
+    </div>
+
+    <!-- why shop with us ends -->
+    <br><br><br>
+
+
+
+
+
+
+
+
+    <!-- heart start -->
+    <div class="heart-container"></div>
+    <!-- heart end -->
+
+
+
+
+
+    <!-- reviwes start -->
+
+    <div class="containerparent">
+        <div class="container__left">
+            <h1>Read what our customers love about us</h1>
+            <p>
+                Over 200 companies frim diverse sectors consult us to enhance the
+                user experience of their products and services.
+            </p>
+            <p>
+                We have helped companies increase their customer base and generate
+                multifold revenue with our service.
+            </p>
+            <button>Read our success stories</button>
+        </div>
+        <div class="container__right">
+            <div class="cardreviwe">
+                <img src="/Presentia/img/vector-users-icon.jpg" alt="user" />
+                <div class="card__content">
+                    <span><i class="ri-double-quotes-l"></i></span>
+                    <div class="card__details">
+                        <p>
+                            We had a great time collaboraring with the Filament team. They
+                            have my high recommendation!
+                        </p>
+                        <h4>- Mohammed Frehat</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="cardreviwe">
+                <img src="/Presentia/img/vector-users-icon.jpg" alt="user" />
+                <div class="card__content">
+                    <span><i class="ri-double-quotes-l"></i></span>
+                    <div class="card__details">
+                        <p>
+                            The team drastically improved our product's user experience &
+                            increased our business outreach.
+                        </p>
+                        <h4>- Hasan Mansor</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="cardreviwe">
+                <img src="/Presentia/img/vector-users-icon.jpg" alt="user" />
+                <div class="card__content">
+                    <span><i class="ri-double-quotes-l"></i></span>
+                    <div class="card__details">
+                        <p>
+                            I absolutely loved working with the Filament team. Complete
+                            experts at what they do!
+                        </p>
+                        <h4>- Rami Abdelhamid</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!--Footer -->
     <footer id="footer-placeholder"></footer>
     <!--JS Links -->
-    <script src="../js/shared/navbar.js" defer></script>
+    <script src="/Presentia/js/home.js"></script>
+    <script src="../js/shared/navbar.js" type="module" defer></script> 
     <script src="../js/shared/footer.js" defer></script>
 </body>
+
 </html>
