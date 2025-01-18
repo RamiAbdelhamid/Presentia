@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #DB4566;
+    --background-color: #F9ECE6;
+    --text-color: #333;
+    --secondary-color: #ffffff;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 15px 0;
+  }
+  
+  header a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    text-decoration: underline;
+  }
+  
+  .product-container {
+    padding: 30px;
+  }
+  
+  .product-image {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+  }
+  
+  .product-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-details {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #c13d5a;
+  }
+  
+  .rating-stars {
+    color: gold;
+    font-size: 20px;
+  }
+  
+  .icon-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .icon-buttons i {
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .icon-buttons i:hover {
+    color: #c13d5a;
+  }
+  
+  footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .review {
+    margin-top: 30px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review h5 {
+    color: var(--primary-color);
+  }
+  
+  .social-icons i {
+    margin: 0 10px;
+    font-size: 20px;
+    color: var(--primary-color);
+    transition: color 0.3s;
+  }
+  
+  .social-icons i:hover {
+    color: #c13d5a;
+  }
