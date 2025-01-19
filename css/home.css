@@ -16,8 +16,8 @@
 }
 
 /* text in slider */
-.carousel-caption,
-.p {
+.carousel-caption
+ {
 font-family: cursive;
 color: var(--colorred);
 font-size: 3rem;
@@ -38,7 +38,8 @@ text-align: left;
     height: fit-content;
         font-size: 2rem;
         font-family: cursive;
-text-align: right;
+color: var(--colorwhite);
+
     
 }
 
@@ -418,10 +419,6 @@ font-family: cursive;
 .back-to-top:hover span {
     transform: translateY(-4px);
 }
-
-
-
-
 .btn-flip-x {
     opacity: 0.8;
     padding: 10px 20px;
@@ -774,34 +771,6 @@ gap: 10px;
 
 
 
-
-
-/* .cardfetch p {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-    line-height: 1.5;
-}
-
-.cardfetch p:first-of-type {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff6363;
-}
-
-.cardfetch p:last-of-type {
-    font-size: 16px;
-    color: #2ecc71;
-    font-weight: bold;
-}
-
-.cardfetch:hover p {
-    color: #3498db;
-    transform: scale(1.05);
-    transition: 0.3s;
-} */
- 
-
 .category {
     display: flex;
     flex-wrap: wrap;
@@ -883,3 +852,6 @@ gap: 10px;
 }
 
 
+
+
+/* *********************************************************** */
