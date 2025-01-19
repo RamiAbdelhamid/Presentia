@@ -3,18 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/checkout.css">
     <title>Presentia</title>
 </head>
 <body>
     <!--Navbar -->
     <nav id="navbar-placeholder"></nav>
 
+    <div class="container">
+        <h1 class="title h3 mb-5">Payment</h1>
+        <div class="row">
+            <!-- Left -->
+            <div class="col-lg-9">
+                <div x-data="{ paymentMethod: 'creditCard' }">
+                    <div class="accordion" id="accordionPayment">
+                        <!-- Credit card -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
+                                <div class="form-check w-100 collapsed" @click="paymentMethod = 'creditCard'" :class="{'active': paymentMethod === 'creditCard'}">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment1">
+                                    <label class="form-check-label pt-1" for="payment1">
+                                        Credit Card
+                                    </label>
+                                </div>
+                                <span>
+                                    <svg width="34" height="25" xmlns="http://www.w3.org/2000/svg"> <!-- Icon SVG --> </svg>
+                                </span>
+                            </h2>
+                            <div x-show="paymentMethod === 'creditCard'" id="collapseCC" class="accordion-collapse collapse show" data-bs-parent="#accordionPayment">
+                                <div class="accordion-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Card Number</label>
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Name on card</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Expiry date</label>
+                                                <input type="text" class="form-control" placeholder="MM/YY">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">CVV Code</label>
+                                                <input type="password" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    <!--Footer -->
-    <footer id="footer-placeholder"></footer>
-    <!--JS Links -->
-    <script src="../js/shared/navbar.js" type="module" defer></script> 
-    <script src="../js/shared/footer.js" defer></script>
+                        <!-- PayPal -->
+                        <div class="accordion-item mb-3 border">
+                            <h2 class="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
+                                <div class="form-check w-100 collapsed" @click="paymentMethod = 'paypal'" :class="{'active': paymentMethod === 'paypal'}">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment2">
+                                    <label class="form-check-label pt-1" for="payment2">
+                                        PayPal
+                                    </label>
+                                </div>
+                                <span>
+                                    <svg width="103" height="25" xmlns="http://www.w3.org/2000/svg"> <!-- Icon SVG --> </svg>
+                                </span>
+                            </h2>
+                            <div x-show="paymentMethod === 'paypal'" id="collapsePP" class="accordion-collapse collapse show" data-bs-parent="#accordionPayment">
+                                <div class="accordion-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" placeholder="Your PayPal Email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="col-lg-3">
+                <div class="card position-sticky top-0">
+                    <div class="p-3 bg-light bg-opacity-10">
+                        <h6 class="card-title mb-3">Order Summary</h6>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4 small">
+                            <span>TOTAL</span> <strong class="text-dark"></strong>
+                        </div>
+                        <div class="form-check mb-1 small">
+                            <input class="form-check-input" type="checkbox" value="" id="tnc">
+                            <label class="form-check-label" for="tnc" aria-required="true">
+                                I agree to the <a href="#">terms and conditions</a>
+                            </label>
+                        </div>
+                        <div class="form-check mb-3 small">
+                            <input class="form-check-input" type="checkbox" value="" id="subscribe" aria-required="true">
+                            <label class="form-check-label" for="subscribe">
+                                Get emails about product updates and events. If you change your mind, you can unsubscribe at any time. <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-2">Place order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/checkout.js" type="module"></script>
 </body>
 </html>
