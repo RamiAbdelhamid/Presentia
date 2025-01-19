@@ -11,6 +11,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/home.css">
 
@@ -38,23 +39,23 @@
         </div>
 
         <div class="carousel-inner">
-            <div class="carousel-item active hero-carousel-item c-item">
+            <div  class="carousel-item active hero-carousel-item c-item">
 
                 <img src="/Presentia/img/img1.jpg" class="d-block w-100 hero-carousel-img" class="c-img" alt="">
 
                 <div class="carousel-caption top-0 mt-4">
-                    <h1 class="display-1 fw-bolder text-capitalize">Welcome To Our Gift Shop</h1>
+                    <h1 class="display-1 fw-bolder text-capitalize" id="welcome">Welcome To Our Gift Shop</h1>
 
 
-                    <button class="btn-flip-x">Shop
-                        Now</button>
+                    <a href="/Presentia/html/shop.html"><button class="btn-flip-x">Shop
+                        Now</button></a>
                 </div>
             </div>
             <div class="carousel-item hero-carousel-item c-item">
                 <img src="/Presentia/img/slider2.jpg" class="d-block w-100 hero-carousel-img" class="c-img" alt="">
 
                 <div class="carousel-caption top-0 mt-4">
-                    <p class="display-1 fw-bolder text-capitalize">Love in Every Petal, Sweetness in Every Bite</p>
+                    <p id="yellow" class="display-1 fw-bolder text-capitalize">Say It with Flowers, Sweeten It with Chocolate</p>
 
                 </div>
             </div>
@@ -62,7 +63,7 @@
                 <img src="/Presentia/img/slider3.jpg" class="d-block w-100 hero-carousel-img" class="c-img"
                     alt="Slide 3">
                 <div class="carousel-caption top-0 mt-4">
-                    <p class="display-1 fw-bolder text-capitalize">Say It with Flowers, Sweeten It with Chocolate</p>
+                    <p id="sayit" class="display-1 fw-bolder text-capitalize">Love in Every Petal, Sweetness in Every Bite</p>
 
                 </div>
             </div>
@@ -89,22 +90,45 @@
 
 
     <!-- products starts -->
-    <h2 class="producthedar">Latest Products</h2>
+    <h2 class="producthedar">Category</h2>
 
 
-<!-- <div class="cardsfetching">
+ <!-- <div class="cardsfetching">
     <div style="width: 18rem;" class="hovering" >
         <h5 id="card1"></h5>
     </div>
-</div> -->
+</div> 
+ -->
+
+<div class="category">
+    <div class="flower">
+        <a href=""><img class="flowercategory" src="/Presentia/img/flowercategory.jpg" alt="">
+        <h3>Flowers</h3></a>
+    </div>
+
+    <div class="Chocolate">
+    <a href=""> <img class="choccategory" src="/Presentia/img/choccategory.jpg" alt="">
+        <h3>Chocolate</h3></a>
+    </div>
+
+    <div class="candy">
+    <a href=""> <img class="candycategory" src="/Presentia/img/candycategory.jpg" alt="">
+        <h3>Candy</h3></a>
+    </div>
+<div class="allcategory">
+    <a href=""><img class="allcategory" src="/Presentia/img/all category.webp" alt="">
+    <h3>All Category</h3></a>
+</div>
+
+</div>
+
+
 
 <div id="cards-containerz"></div>
 
     
     <br>
-    <div class="prodbutton">
-        <button class="btn-flip-x">Shop Now</button>
-    </div>
+    
     <!-- products end -->
     <br><br>
 
@@ -210,7 +234,7 @@
                 We have helped companies increase their customer base and generate
                 multifold revenue with our service.
             </p>
-            <button>Read our success stories</button>
+            <a href="/Presentia/html/about.html"><button>Read our success stories</button></a>
         </div>
         <div class="container__right">
             <div class="cardreviwe">
@@ -334,9 +358,9 @@
     <!--Footer -->
     <footer id="footer-placeholder"></footer>
     <!--JS Links -->
-    <script src="../Presentia/js/home.js"></script>
+    <script src="/Presentia/js/home.js" type="module"></script>
     <script src="../js/shared/navbar.js" type="module" defer></script> 
-    <script src="../js/shared/footer.js" defer></script>
+    <script src="../js/shared/footer.js" type="module" defer></script>
 
 
 </body>

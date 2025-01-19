@@ -11,16 +11,45 @@
     --background-image: linear-gradient(144deg, #FF9A76, #FF6363 50%, #FF1E62);
     --colorwhite: #FFFFFF;
     --box-shadow4: 0 3px 5px rgba(0, 0, 0, 0.2);
+--colorred:rgb(255, 8, 8);
+
+}
+
+/* text in slider */
+.carousel-caption,
+.p {
+font-family: cursive;
+color: var(--colorred);
+font-size: 3rem;
+    height: fit-content;
 }
 
 
 
-/* text in slider */
-.carousel-caption,
-.h1,
-.p {
+#welcome{
+    height: fit-content;
+font-size: 3rem;
+font-family: cursive;
+text-align: left;
 
-    color: var(--background);
+}
+
+#yellow{
+    height: fit-content;
+        font-size: 2rem;
+        font-family: cursive;
+text-align: right;
+    
+}
+
+#sayit{
+
+height: fit-content;
+    font-size: 2rem;
+    font-family: cursive;
+    text-align: right;
+    color: var(--colorred);
+
 
 }
 
@@ -44,6 +73,7 @@
 /* slider */
 .c-item {
     height: 600px;
+    
 }
 
 /* slider */
@@ -62,6 +92,8 @@
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
+font-family: cursive;
+
 
 
 }
@@ -391,6 +423,7 @@
 
 
 .btn-flip-x {
+    opacity: 0.8;
     padding: 10px 20px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -401,6 +434,8 @@
     cursor: pointer;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 50rem;
+    margin-top: 5rem;
 }
 
 .btn-flip-x:hover {
@@ -741,7 +776,7 @@ gap: 10px;
 
 
 
-.cardfetch p {
+/* .cardfetch p {
     font-size: 16px;
     color: #333;
     margin: 10px 0;
@@ -764,4 +799,87 @@ gap: 10px;
     color: #3498db;
     transform: scale(1.05);
     transition: 0.3s;
+} */
+ 
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    /* جعل العناصر تظهر بجانب بعضها */
+    gap: 30px;
+    /* زيادة المسافة بين الكروت */
+    justify-content: center;
+    /* محاذاة العناصر في المنتصف أفقيًا */
+    align-items: center;
+    /* محاذاة العناصر عموديًا */
+    margin: 50px;
+    /* مسافة حول القسم */
 }
+
+.category>div {
+    text-align: center;
+    /* جعل النص في وسط العنصر */
+    padding: 20px;
+    /* مسافة داخلية للكارد */
+    border: 2px solid #ddd;
+    /* حافة خفيفة حول الكارد */
+    border-radius: 15px;
+    /* زوايا مستديرة */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* تأثير الظل */
+    background-color: #fff;
+    /* لون خلفية أبيض */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* تأثيرات عند التفاعل */
+}
+
+.category img {
+    width: 200px;
+    /* زيادة عرض الصورة */
+    height: 200px;
+    /* زيادة ارتفاع الصورة */
+    border-radius: 15px;
+    /* زوايا دائرية للصورة */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* تأثير ظل أكبر */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* تأثيرات عند التفاعل */
+}
+
+.category h3 {
+    margin-top: 15px;
+    /* زيادة المسافة بين الصورة والنص */
+    font-size: 1.25rem;
+    /* تكبير النص */
+    color: #333;
+    /* لون النص */
+    font-weight: bold;
+    /* جعل النص غامقًا */
+    font-family: cursive;
+}
+
+.category img:hover {
+    transform: scale(1.15);
+    /* زيادة التكبير عند التمرير */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    /* تعزيز الظل عند التفاعل */
+}
+
+.category>div:hover {
+    transform: scale(1.05);
+    /* تكبير الكارد عند التفاعل */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* زيادة ظل الكارد */
+}
+
+/* تعديل الصور */
+.choccategory,
+.candycategory,
+.flowercategory {
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    
+}
+
+
