@@ -4,14 +4,8 @@ Welcome to **Presentia Store**! This project showcases an e-commerce platform fe
 
 ---
 
-## 👨‍💻 About the Developer  
-Hasan, Rami, Ahmad, Belal, Ghofran 
-
----
-
-## 🌐 Live Website  
-Explore the website via the live preview:  
-👉 [Live Preview](https://your-live-preview-link.com)
+## 👨‍💻 About the Developers  
+Hasan, Rami, Ahmad, Belal, Ghofran  
 
 ---
 
@@ -25,7 +19,7 @@ Explore the website via the live preview:
 7. **About**  
 8. **Contact**  
 9. **Wishlist**  
-10. **Checkout**
+10. **Checkout**  
 
 ---
 
@@ -34,7 +28,7 @@ Explore the website via the live preview:
 - **🎨 Modern UI**: Built with a clean and visually appealing design using Bootstrap and Tailwind CSS.  
 - **🔥 Firebase Integration**: Used for authentication and backend services.  
 - **🛒 E-Commerce Functionality**: Includes shopping cart, wishlist, and checkout pages.  
-- **👤 User Profiles**: Personal user dashboards for account management.
+- **👤 User Profiles**: Personal user dashboards for account management.  
 
 ---
 
@@ -42,12 +36,16 @@ Explore the website via the live preview:
 - **HTML5** and **CSS3** for the front-end.  
 - **JavaScript** for interactivity and functionality.  
 - **Bootstrap** and **Tailwind CSS** for responsive and modern design.  
-- **Firebase** for authentication and backend services.
+- **Firebase** for authentication and backend services.  
 
 ---
 
 ## 🎨 Figma Wireframe and Mockup  
 Explore the wireframes and mockups for the project design on Figma:  
-👉 [Access the Figma Wireframe & Mockup](https://www.figma.com/design/your-figma-link)
+👉 [Access the Figma Wireframe & Mockup](https://www.figma.com/design/your-figma-link)  
 
 ---
+
+## 📋 Trello Board  
+Track project progress and tasks on Trello:  
+👉 [Trello Board](https://trello.com/b/yRNoKGDm/project-js)
