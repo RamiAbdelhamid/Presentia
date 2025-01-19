@@ -38,8 +38,7 @@ setTimeout(() => {
 
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import {
   getDatabase,
   ref,
@@ -52,16 +51,16 @@ import {
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyD-1whEUJkPFDsGplbPI-sSB6ck4bpTbBQ",
-  authDomain: "realtime-c0239.firebaseapp.com",
-  databaseURL: "https://realtime-c0239-default-rtdb.firebaseio.com",
-  projectId: "realtime-c0239",
-  storageBucket: "realtime-c0239.firebasestorage.app",
-  messagingSenderId: "657803082414",
-  appId: "1:657803082414:web:db894345dedca8d669cb3f",
-  measurementId: "G-XN2P7WPXHB",
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyAgc0tYF5WXG_kArW0h3YAnQ_BKjPXJZOw",
+    authDomain: "presentia-55b8b.firebaseapp.com",
+    databaseURL: "https://presentia-55b8b-default-rtdb.firebaseio.com",
+    projectId: "presentia-55b8b",
+    storageBucket: "presentia-55b8b.firebasestorage.app",
+    messagingSenderId: "28781643269",
+    appId: "1:28781643269:web:16fa963453ab31c9e43e6c",
+  };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -89,7 +88,7 @@ export { database };
 
 
 // Listen for data changes
-const starCountRef = ref(database, "users/");
+const starCountRef = ref(database, "products/");
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
 
@@ -101,16 +100,16 @@ onValue(starCountRef, (snapshot) => {
   } else {
     // If data exists, create cards
     Object.keys(data).forEach((userId) => {
-      const user = data[userId];
+      const products = data[userId];
 
       formattedData += `
         <div class="cardfetch" >
-          <img src="${user.pic}" alt="User Profile Picture" style="width:500px; height:200px; class="card-img";>
+          <img src="${products.image}" alt="User Profile Picture" style="width:500px; height:200px; class="card-img";>
           <hr>
-          <p>Name: ${user.name}</p>
-          <p>Description: ${user.Description}</p>
+          <p> ${products.title}</p>
+          <p>${products.description}</p>
           <div style="height: 20px;"></div>
-          <p>Price: ${user.price}</p>
+          <p>Price: ${products.price}</p>
         </div>
       `;
     });
@@ -123,8 +122,6 @@ onValue(starCountRef, (snapshot) => {
 
 
 
-
-
 // reviews
 
 // Listen for data changes
@@ -132,40 +129,34 @@ const reviewsRef = ref(database, "reviews/");
 onValue(reviewsRef, (snapshot) => {
   const data = snapshot.val();
 
-  let formattedReviews = "";
-  let formattedReviewsname = "";
+  const reviewBoxes = document.querySelectorAll(".cardreviwe .card__details"); // Select all review boxes
+
+  // Clear all review boxes
+  reviewBoxes.forEach((box) => {
+    box.innerHTML = ""; // Clear content of each review box
+  });
 
   if (!data) {
-    // If no reviews exist, show a message
-    formattedReviews =
-      "<p>No reviews available yet. Be the first to review!</p>";
- formattedReviewsname =
-    "<p>No reviews available yet. Be the first to review!</p>";
-
-
-  } else {
-    // If reviews exist, create review cards
-    for (const reviewId in data) {
-      if (data.hasOwnProperty(reviewId)) {
-        const review = data[reviewId];
-
-        formattedReviews += `<p> ${review.comment}</p>`;
-        formattedReviews += `<div style="height: 20px;"></div>`; // Spacer
-
-formattedReviewsname += `
-  <p style="color: var(--primary-color); font-size: 1rem; font-weight: 500;">
-    <strong></strong> ${review.name}
-  </p>`;
-
-      }
+    // If no reviews exist, show a message in the first box
+    if (reviewBoxes[0]) {
+      reviewBoxes[0].innerHTML =
+        "<p>No reviews available yet. Be the first to review!</p>";
     }
+  } else {
+    // If reviews exist, distribute them across the boxes
+    const reviewArray = Object.values(data); // Convert data to an array
+    reviewArray.forEach((review, index) => {
+      if (reviewBoxes[index]) {
+        // Ensure the box exists for this review
+        reviewBoxes[index].innerHTML = `
+          <p>${review.reviewText}</p>
+          <h4>${review.reviewerName}</h4>
+        `;
+      }
+    });
   }
-
-  // Display reviews in the DOM
-  document.getElementById("reviwes").innerHTML = formattedReviews;
-    document.getElementById("reviwesn").innerHTML = formattedReviewsname;
-
 });
+
 
 
 
