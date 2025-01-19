@@ -3,30 +3,21 @@ import { onValue, } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-dat
 
 
 // Listen for data changes
-const starCountRef = ref(database, "products/");
-onValue(starCountRef, (snapshot) => {
+onValue(ref(database, "products/"), (snapshot) => {
   const data = snapshot.val();
-  displayProducts(data);
+  const filterCategory = "flowerBouquets";
+  const filteredProducts = Object.values(data).filter(product => product.category === filterCategory);
+  displayProducts(filteredProducts);
 });
 
 // Function to display products
-function displayProducts(data, filterCategory = "all") {
+function displayProducts(filteredProducts) {
   let formattedData = "";
-
-  if (!data) {
+  if (!filteredProducts) {
     formattedData = "<p>No data available.</p>";
   } else {
-    for (const productId in data) {
-      if (data.hasOwnProperty(productId)) {
-        const product = data[productId];
-
-        // Check category filter
-        if (
-          filterCategory === "all" ||
-          (filterCategory === "option-1" && product.category === "flowerBouquets") ||
-          (filterCategory === "option-2" && product.category === "Chocolate bouquets") ||
-          (filterCategory === "option-3" && product.category === "Candy bouquets")
-        ) {
+    for (const productId in filteredProducts) {
+        const product = filteredProducts[productId];
           formattedData += `
             <div class="col-sm-6 col-md-4 col-lg-3">
               <div class="box">
@@ -57,25 +48,10 @@ function displayProducts(data, filterCategory = "all") {
               </div>
             </div>
           `;
-        }
-      }
     }
   }
-
   document.getElementById("product-container").innerHTML = formattedData;
 }
 
-// Listen for dropdown changes
-document.querySelectorAll('.options input[type="radio"]').forEach((input) => {
-  input.addEventListener('change', (event) => {
-    const selectedCategory = event.target.id;
 
-    // Fetch and filter products based on the selected category
-    const starCountRef = ref(database, "products/");
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      displayProducts(data, selectedCategory);
-    });
-  });
-});
 
