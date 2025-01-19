@@ -1,8 +1,7 @@
 // Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js"; // Correct import for ref and set
-
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
 
 // Firebase configuration object
 const firebaseConfig = {
@@ -23,4 +22,4 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 
 // Export the auth and database objects
-export { auth, database, createUserWithEmailAndPassword, signInWithEmailAndPassword, ref, set };
+export { auth, database, createUserWithEmailAndPassword, signInWithEmailAndPassword, ref, set, get, signInWithPopup, GoogleAuthProvider };

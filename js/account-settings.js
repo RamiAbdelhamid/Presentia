@@ -9,7 +9,6 @@ const genderSelect = document.getElementById('gender-select');
 const profilePicture = document.getElementById('profile-picture');
 
 
-
 // Event listener for gender change
 let selectedGender = "male";
 genderSelect.addEventListener('change', () => {
