@@ -1,4 +1,4 @@
-import { database } from "./review.js";
+import { database } from "./conifg.js";
 import { ref, set } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
 
 //create user
