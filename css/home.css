@@ -29,6 +29,7 @@
 /* slider */
 .container-item {
     height: 600px;
+    
 }
 
 /* slider */
@@ -47,7 +48,6 @@
 
 /* slider */
 .c-img {
-
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6);
@@ -733,4 +733,35 @@ gap: 10px;
     bottom: 90px;
     opacity: 1;
     visibility: visible;
+}
+
+
+
+
+
+
+
+.cardfetch p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.cardfetch p:first-of-type {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6363;
+}
+
+.cardfetch p:last-of-type {
+    font-size: 16px;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.cardfetch:hover p {
+    color: #3498db;
+    transform: scale(1.05);
+    transition: 0.3s;
 }
