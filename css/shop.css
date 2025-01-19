@@ -1,288 +1,268 @@
-#product-container {
-  display: flex;
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 20px;
-  padding: 20px; 
-  margin: 0 auto; 
-  max-width: 1200px; 
-  box-sizing: border-box; 
-}
-.product-card {
-  width: 250px; 
-  background: #fff; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  padding: 15px; 
-  text-align: center; 
-}
-.product-card img {
-  width: 100%; 
-  height: auto; 
-  border-radius: 5px; 
-}
-
 /* shop section  */
 .layout_padding {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-  .heading_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  
-  .heading_container h2 {
-    text-transform: uppercase;
-    font-weight: bold;
-    
-  }
-  
-  .heading_container h2  {
-    color:black;
-  }
-  
-  .heading_container.heading_center {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-  }
-  
-.shop_section .heading_container {
-    margin-bottom: 20px;
-  }
- 
-   /* filter */
-   .text {
-     color: #db4f66;
-   }
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.heading_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 
-  .row.align-items-center {
-    margin-bottom: -60px; 
+.heading_container h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  
+}
+
+.heading_container h2  {
+  color:black;
+}
+
+.heading_container.heading_center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.shop_section .heading_container {
+  margin-bottom: 20px;
+}
+
+ /* filter */
+ .text {
+   color: #db4f66;
+ }
+
+.row.align-items-center {
+  margin-bottom: -60px; 
+}
+ /* dropDown  */
+ .dropdown {
+  margin-bottom: 5px; 
+}
+@media (max-width: 768px) {
+  .dropdown {
+      margin-bottom: 5px; 
   }
-   /* dropDown  */
-   .dropdown {
-    margin-bottom: 5px; 
-  }
-  @media (max-width: 768px) {
-    .dropdown {
-        margin-bottom: 5px; 
-    }
-  }
-   .select {
-     width: fit-content;
-     cursor: pointer;
-     position: relative;
-     transition: 300ms;
-     color: white;
-     overflow: hidden;
-   }
-   
-   .selected {
-     background-color: #db4f66;
-     padding: 5px;
-     margin-bottom: 3px;
-     border-radius: 5px;
-     position: relative;
-     z-index: 100000;
-     font-size: 15px;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-   }
-   
-   .arrow {
-     position: relative;
-     right: 0px;
-     height: 10px;
-     transform: rotate(-90deg);
-     width: 25px;
-     fill: white;
-     z-index: 100000;
-     transition: 300ms;
-   }
-   
-   .options {
-     display: flex;
-     flex-direction: column;
-     border-radius: 5px;
-     padding: 5px;
-     background-color: #db4f66;
-     position: relative;
-     top: -100px;
-     opacity: 0;
-     transition: 300ms;
-   }
-   
-   .select:hover > .options {
-     opacity: 1;
-     top: 0;
-   }
-   
-   .select:hover > .selected .arrow {
-     transform: rotate(0deg);
-   }
-   
-   .option {
-     border-radius: 5px;
-     padding: 5px;
-     transition: 300ms;
-     background-color: #db4f66;
-     width: 150px;
-     font-size: 15px;
-   }
-   .option:hover {
-    color: #323741;
-   }
-   
-   .options input[type="radio"] {
-     display: none;
-   }
-   
-   .options label {
-     display: inline-block;
-   }
-   .options label::before {
-     content: attr(data-txt);
-   }
-   
-   .options input[type="radio"]:checked + label {
-     display: none;
-   }
-   
-   .options input[type="radio"]#all:checked + label {
-     display: none;
-   }
-   
-   .select:has(.options input[type="radio"]#all:checked) .selected::before {
-     content: attr(data-default);
-   }
-   .select:has(.options input[type="radio"]#option-1:checked) .selected::before {
-     content: attr(data-one);
-   }
-   .select:has(.options input[type="radio"]#option-2:checked) .selected::before {
-     content: attr(data-two);
-   }
-   .select:has(.options input[type="radio"]#option-3:checked) .selected::before {
-     content: attr(data-three);
-   }
+}
+ .select {
+   width: fit-content;
+   cursor: pointer;
+   position: relative;
+   transition: 300ms;
+   color: white;
+   overflow: hidden;
+ }
+ 
+ .selected {
+   background-color: #db4f66;
+   padding: 5px;
+   margin-bottom: 3px;
+   border-radius: 5px;
+   position: relative;
+   z-index: 100000;
+   font-size: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ 
+ .arrow {
+   position: relative;
+   right: 0px;
+   height: 10px;
+   transform: rotate(-90deg);
+   width: 25px;
+   fill: white;
+   z-index: 100000;
+   transition: 300ms;
+ }
+ 
+ .options {
+   display: flex;
+   flex-direction: column;
+   border-radius: 5px;
+   padding: 5px;
+   background-color: #db4f66;
+   position: relative;
+   top: -100px;
+   opacity: 0;
+   transition: 300ms;
+ }
+ 
+ .select:hover > .options {
+   opacity: 1;
+   top: 0;
+ }
+ 
+ .select:hover > .selected .arrow {
+   transform: rotate(0deg);
+ }
+ 
+ .option {
+   border-radius: 5px;
+   padding: 5px;
+   transition: 300ms;
+   background-color: #db4f66;
+   width: 150px;
+   font-size: 15px;
+ }
+ .option:hover {
+  color: #323741;
+ }
+ 
+ .options input[type="radio"] {
+   display: none;
+ }
+ 
+ .options label {
+   display: inline-block;
+ }
+ .options label::before {
+   content: attr(data-txt);
+ }
+ 
+ .options input[type="radio"]:checked + label {
+   display: none;
+ }
+ 
+ .options input[type="radio"]#all:checked + label {
+   display: none;
+ }
+ 
+ .select:has(.options input[type="radio"]#all:checked) .selected::before {
+   content: attr(data-default);
+ }
+ .select:has(.options input[type="radio"]#option-1:checked) .selected::before {
+   content: attr(data-one);
+ }
+ .select:has(.options input[type="radio"]#option-2:checked) .selected::before {
+   content: attr(data-two);
+ }
+ .select:has(.options input[type="radio"]#option-3:checked) .selected::before {
+   content: attr(data-three);
+ }
 
 /* cards section */
 
-  .shop_section .box {
-    background-color: #ffffff;
-    position: relative;
-    padding: 10px;
-    margin-top: 50px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 400px;
-    transition: transform 0.6s ease-in-out;
-  }
-  .shop_section .box:hover {
-    transform: scale(1.03);
+.shop_section .box {
+  background-color: #ffffff;
+  position: relative;
+  padding: 10px;
+  margin-top: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  transition: transform 0.6s ease-in-out;
 }
-  .shop_section .box a {
-    color: #000000;
-  }
-  
-  .shop_section .box .img-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 15px 30px;
-    height: 200px;
-  }
-  
-  .shop_section .box .img-box img {
-    max-width: 100%;
-    max-height: 145px;
-  }
-  
-  .shop_section .box .detail-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.shop_section .box:hover {
+  transform: scale(1.03);
+}
+.shop_section .box a {
+  color: #000000;
+}
+
+.shop_section .box .img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 30px;
+  height: 200px;
+}
+
+.shop_section .box .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.shop_section .box .detail-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.shop_section .box .detail-box h6 span {
+  color: #db4f66;
+}
+
+.shop_section .description p {
+    text-align: left;
     padding: 5px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
-  .shop_section .box .detail-box h6 span {
-    color: #db4f66;
-  }
-  
-  .shop_section .description p {
-      text-align: left;
-      padding: 5px;
-      font-size: 14px;
-      
-  }
-
-
-  .buy-now {
-    position: relative;
     font-size: 14px;
-    padding: 10px 20px; /* Slightly more padding for better button aesthetics */
-    margin-top: 4px;
-    margin-bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    white-space: unset;
-    width: auto;
-    border: none;
-    border-radius: 25px; /* Soft rounded corners for a modern look */
-    color: rgb(255, 255, 255);
-    background-color: #db4f66;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added smooth transform transition */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  }
-  
-  .buy-now:hover {
-    background-color:gray; /* Changed to a more modern blue */
-    transform: scale(1.05); /* Subtle scaling for the button itself */
-  }
-   /* icon  */
-  .position-absolute {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adding box-shadow transition */
-  }
-  
-  .position-absolute:hover {
-    transform: scale(1.2); /* Slightly more noticeable scaling */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for depth */
-  }
-  
-  .position-absolute i {
-    font-size: 1.5rem;
-    color: #db4f66; /* Match the icon color to the button's theme */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth color and scale transitions */
-  }
-  
-  .position-absolute:hover i {
-    transform: scale(1.2); /* Slightly enlarge the icon */
-  }
+    
+}
+
+
+.buy-now {
+  position: relative;
+  font-size: 14px;
+  padding: 10px 20px; /* Slightly more padding for better button aesthetics */
+  margin-top: 4px;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  white-space: unset;
+  width: auto;
+  border: none;
+  border-radius: 25px; /* Soft rounded corners for a modern look */
+  color: rgb(255, 255, 255);
+  background-color: #db4f66;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added smooth transform transition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.buy-now:hover {
+  background-color:gray; /* Changed to a more modern blue */
+  transform: scale(1.05); /* Subtle scaling for the button itself */
+}
+ /* icon  */
+.position-absolute {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adding box-shadow transition */
+}
+
+.position-absolute:hover {
+  transform: scale(1.2); /* Slightly more noticeable scaling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for depth */
+}
+
+.position-absolute i {
+  font-size: 1.5rem;
+  color: #db4f66; /* Match the icon color to the button's theme */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth color and scale transitions */
+}
+
+.position-absolute:hover i {
+  transform: scale(1.2); /* Slightly enlarge the icon */
+}
+
+

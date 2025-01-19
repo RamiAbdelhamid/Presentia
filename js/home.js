@@ -24,7 +24,7 @@ function createFallingHeart() {
 const heartInterval = setInterval(createFallingHeart, 200);
 setTimeout(() => {
   clearInterval(heartInterval); // Stop generating hearts after 15 seconds
-}, 5000);
+}, 2500);
 
 // end heart waterfall//**********************************************************
 
@@ -87,37 +87,39 @@ export { database };
 
 
 
-// Listen for data changes
-const starCountRef = ref(database, "products/");
-onValue(starCountRef, (snapshot) => {
-  const data = snapshot.val();
+// // Listen for data changes
+// const starCountRef = ref(database, "products/");
+// onValue(starCountRef, (snapshot) => {
+//   const data = snapshot.val();
 
-  let formattedData = "";
+//   let formattedData = "";
 
-  if (!data) {
-    // If no data exists, clear the DOM or show a message
-    formattedData = "<p>No data available.</p>";
-  } else {
-    // If data exists, create cards
-    Object.keys(data).forEach((userId) => {
-      const products = data[userId];
+//   if (!data) {
+//     // If no data exists, clear the DOM or show a message
+//     formattedData = "<p>No data available.</p>";
+//   } else {
+//     // If data exists, create cards
+//  const productKeys = Object.keys(data); // Get all keys of the data
+//  productKeys.slice(0, 8).forEach((userId) => {
+//    // Limit to 8 cards
+//    const products = data[userId];
 
-      formattedData += `
-        <div class="cardfetch" >
-          <img src="${products.image}" alt="User Profile Picture" style="width:500px; height:200px; class="card-img";>
-          <hr>
-          <p> ${products.title}</p>
-          <p>${products.description}</p>
-          <div style="height: 20px;"></div>
-          <p>Price: ${products.price}</p>
-        </div>
-      `;
-    });
-  }
+//    formattedData += `
+//         <div class="cardfetch" >
+//           <img src="${products.image}" alt="User Profile Picture" style="width:500px; height:200px; class="card-img";>
+//           <hr>
+//           <p> ${products.title}</p>
+//           <p>${products.description}</p>
+//           <div style="height: 20px;"></div>
+//           <p>Price: ${products.price}</p>
+//         </div>
+//       `;
+//  });
+//   }
 
-  // Display formatted data in the DOM
-  document.getElementById("cards-containerz").innerHTML = formattedData;
-});
+//   // Display formatted data in the DOM
+//   document.getElementById("cards-containerz").innerHTML = formattedData;
+// });
 
 
 
