@@ -1,121 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link href="product-details.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Presentia</title>
+    <style>
+        body {
+            font-family: cursive;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        .pro-img-details img {
+            max-width: 100%;
+            border: 4px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        }
+
+        .pro-img-details img:hover {
+            transform: scale(1.05);
+            box-shadow: 35px 35px 35px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Product Title */
+        .pro-d-title a {
+            text-decoration: none;
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .pro-d-title a:hover {
+            color: #ff9d9d;
+        }
+
+        /* Product Meta */
+        .product_meta {
+            font-family: cursive;
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #000000;
+        }
+
+        .product_meta .categories {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #007bff;
+            box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.15);
+
+        }
+
+        /* Price Section */
+        .price {
+            font-family: cursive;
+            font-size: 2rem;
+        }
+
+        .pro-price {
+            font-family: cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #090908;
+            margin-top: 15px;            
+            box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .details {
+            margin-top: 1.5rem;
+            font-size: 2rem;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Add to Cart Button */
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            transform: translateY(-3px);
+        }
+
+        .payment-pro{
+            margin-top: 10rem;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviews-section h4 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 8px;
+        }
+
+        .reviews {
+            margin-bottom: 30px;
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            border: 1px solid #e1e4e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h5 {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            font-size: 1rem;
+            color: #555;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Textarea and Button */
+        form textarea {
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 1rem;
+            resize: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        form textarea:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+            outline: none;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
+
 <body>
-    <!--Navbar -->
+    <!-- Navbar -->
     <nav id="navbar-placeholder"></nav>
 
-<div class="container pro-cont">
-  <div class="pro-det">
-    <!-- Product Image -->
-    <div class="product-im">
-      <img src="tulip.jpeg" alt="Bouquet of Tulips">
+    <div class="container my-5">
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="pro-img-details">
+                    <img src="" alt="Product Image">
+                </div>
+            </div>
+            <!-- Product Details -->
+            <div class="col-lg-6 col-md-12">
+                <h4 class="pro-d-title">
+                    <a href="#">Title</a>
+                </h4>
+                <p class="details">
+                    Product-Details.
+                </p>
+                <div class="product_meta">
+                    <span class="posted_in">
+                        <strong>Categories:</strong>
+                        <a rel="tag" href="#" class="categories">Category</a>
+                    </span>
+                </div>
+                <div class="payment-pro">
+                    <div class="m-bot15 my-3">
+                        <strong class="price">Price:</strong>
+                        <span class="pro-price">$300.00</span>
+                    </div>
+                </div>
+                <p class="mt-4">
+                    <button class="btn btn-round btn-danger" type="button">
+                        <i class="fa fa-shopping-cart"></i> Buy Now
+                    </button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="row reviews-section">
+            <div class="col-md-12">
+                <h4>Customer Reviews</h4>
+                <div class="reviews">
+                    <!-- Reviews will be dynamically inserted here -->
+                </div>
+                <h4>Add a Comment</h4>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" placeholder="Write your comment here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <!-- Product Info -->
-    <div class="pro-info">
-      <h2>Bouquet of Tulips</h2>
-      <p>A vibrant arrangement of fresh tulips, symbolizing love and cheer. Perfect for any occasion, this elegant bouquet adds a touch of color and freshness to your space.</p>
-      <div class="d-flex align-items-center mb-3">
-        <span>
-          <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-          <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-          <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-          <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-          4.0 (100 reviews)
-        </span>
-      </div>
-      <h4>Price: <span class="text-danger">19.99 JOD</span></h4>
-      <div class="custom-amount d-flex align-items-center mt-3">
-        <label for="amount" class="me-2 custom-label">Amount:</label>
-        <input type="number" id="amount" class="form-control custom-input w-25" value="1" min="1">
-      </div>
-      <div class="mt-3">
-        <i class="bi bi-heart fav-icon ms-3" title="Add to Favorites"> <button class="btn btn-primary btn-custom">Add to Cart</button>
-        
-          <div class="heart-cont" title="Like">
-                      <input type="checkbox" class="checkbox" id="Give-It-An-Id">
-                      <div class="svg-container">
-                          <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                              </path>
-                          </svg>
-                          <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                              </path>
-                          </svg>
-                          <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="10,10 20,20"></polygon>
-                              <polygon points="10,50 20,50"></polygon>
-                              <polygon points="20,80 30,70"></polygon>
-                              <polygon points="90,10 80,20"></polygon>
-                              <polygon points="90,50 80,50"></polygon>
-                              <polygon points="80,80 70,70"></polygon>
-                          </svg>
-                      </div>
-                  </div></i>
-      </div>
-    </div>
-  </div>
-  <br><hr><br>
 
-  <!-- Review and Comment Section -->
-  <div class="review-sec">
-    <h3>Customer Reviews</h3>
-    <div class="mb-3">
-      <h5>Abdullah Saleh</h5>
-      <p>"Absolutely stunning! The tulips were fresh, vibrant, and beautifully arranged. Highly recommend for any occasion!"</p>
-    </div>
-
-    <!-- Comment Section -->
-    <div class="textarea-sec mt-4">
-      <div class="rate">
-        <h4>Leave a Review</h4>
-        <input value="5" name="rate" id="star5" type="radio">
-        <label title="text" for="star5"></label>
-        <input value="4" name="rate" id="star4" type="radio">
-        <label title="text" for="star4"></label>
-        <input value="3" name="rate" id="star3" type="radio" checked="">
-        <label title="text" for="star3"></label>
-        <input value="2" name="rate" id="star2" type="radio">
-        <label title="text" for="star2"></label>
-        <input value="1" name="rate" id="star1" type="radio">
-        <label title="text" for="star1"></label>
-      </div>
-      
-      <textarea id="userComment" rows="4" placeholder="Write your review here..."></textarea>
-      <div class="d-flex align-items-center mt-3">
-  
-      </div>
-      <button class="btn btn-primary btn-submit btn-sub mt-3">Submit Review</button>
-    </div>
-  </div>
-</div>
-
-<script>ة
-  // Toggle Favorite Icon
-  document.querySelector('.fav-icon').addEventListener('click', function () {
-    this.classList.toggle('active');
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-</body>
-</html>
-
-
-    <!--Footer -->
+    <!-- Footer -->
     <footer id="footer-placeholder"></footer>
-    <!--JS Links -->
-    <script src="../js/shared/navbar.js" type="module" defer></script> 
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="../js/shared/navbar.js" type="module" defer></script>
     <script src="../js/shared/footer.js" defer></script>
+    <script src="../js/product-details.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

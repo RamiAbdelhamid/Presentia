@@ -29,8 +29,8 @@ function displayProducts(data, filterCategory = "all") {
         ) {
           formattedData += `
             <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="box">
-                <a href="checkout.html?cardId=${productId}" class="text-decoration-none">
+              <a href="product-details.html?cardId=${productId}" class="text-decoration-none">
+                <div class="box">
                   <div class="img-box">
                     <img src="${product.image}" alt="">
                   </div>
@@ -41,10 +41,11 @@ function displayProducts(data, filterCategory = "all") {
                   </div>
                   <div class="description">
                     <p class="title">${product.description}</p>
-                  </div>
-                  <button class="container-fluid buy-now">BUY NOW</button>
-                </a>
-              </div>
+                  </div></a>
+                  <a href="checkout.html?cardId=${productId}" class="text-decoration-none">
+                    <button class="container-fluid buy-now">BUY NOW</button>
+                  </a>
+                </div>
             </div>
           `;
         }

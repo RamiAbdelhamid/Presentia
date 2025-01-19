@@ -12,7 +12,7 @@ export async function logoutUser() {
         await signOut(auth); // This should sign out the user from Firebase
         console.log("User successfully signed out.");
         localStorage.setItem('isLoggedIn', 'false');  // Update localStorage here
-        window.location.href = '/Presentia/html/login.html'; // Redirect to login
+        window.location.href = '../html/login.html'; // Redirect to login
     } catch (error) {
         console.error("Error during logout:", error.message);
         alert(`Logout failed: ${error.message}`);
