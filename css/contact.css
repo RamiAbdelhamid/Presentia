@@ -12,8 +12,8 @@ body {
     border-radius: 8px;
     justify-content: center;
     align-items: center;
-    background-color: #F9ECE6;
-}
+    background-color: rgba(249, 236, 230, 0.2);
+        /* لون مع شفافية 50% */}
 
 iframe {
     flex: 1;
@@ -165,19 +165,19 @@ h1 span {
     font-weight: 300;
 }
 .rotates {
-    font-weight: 500;
+    font-weight: 800;
     display: inline-block;
-    
-    animation: spin 5s linear infinite;
+    color: #ffffff;
+    animation: spin 8s linear infinite;
     
 }
 
 @keyframes spin {
     from {
-        transform: rotate(0deg);
+        transform: rotate(-45deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: rotate(50deg);
     }
 }
