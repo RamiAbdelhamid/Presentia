@@ -42,7 +42,7 @@ Hasan, Rami, Ahmad, Belal, Ghofran
 
 ## 🎨 Figma Wireframe and Mockup  
 Explore the wireframes and mockups for the project design on Figma:  
-👉 [Access the Figma Wireframe & Mockup](https://www.figma.com/design/your-figma-link)  
+👉 [Access the Figma Wireframe & Mockup](https://www.figma.com/design/KR531d41kBKXaTSKD7uQwW/Flower-Store?node-id=0-1&p=f&t=PHRyN9QoSxFDuJfg-0)  
 
 ---
 
