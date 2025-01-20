@@ -66,7 +66,7 @@ export { database };
 // reviews
 
 // Listen for data changes
-const reviewsRef = ref(database, "reviews/");
+const reviewsRef = ref(database, "reviews/productid");
 onValue(reviewsRef, (snapshot) => {
   const data = snapshot.val();
 
@@ -90,8 +90,8 @@ onValue(reviewsRef, (snapshot) => {
       if (reviewBoxes[index]) {
         // Ensure the box exists for this review
         reviewBoxes[index].innerHTML = `
-          <p>${review.reviewText}</p>
-          <h4>${review.reviewerName}</h4>
+          <p>${review.comment}</p>
+          <h4>${review.user}</h4>
         `;
       }
     });
