@@ -20,7 +20,7 @@ body {
 /* Product Title */
 .pro-d-title a {
     text-decoration: none;
-    color: #333;
+    color: #fe7272;
     font-size: 3.5rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -28,7 +28,7 @@ body {
 }
 
 .pro-d-title a:hover {
-    color: #ff9d9d;
+    color: #514F4F;
 }
 
 /* Product Meta */
@@ -36,13 +36,13 @@ body {
     font-family: cursive;
     margin-top: 10px;
     font-size: 1.5rem;
-    color: #000000;
+    color: #514F4F;
 }
 
 .product_meta .categories {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #007bff;
+    color: #ff8989;
     box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.15);
 
 }
@@ -57,20 +57,20 @@ body {
     font-family: cursive;
     font-size: 2rem;
     font-weight: bold;
-    color: #090908;
+    color: #fe7272;
     margin-top: 15px;            
     box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.15);
 }
 
 .details {
     margin-top: 1.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
 }
 
 /* Add to Cart Button */
 .btn-danger {
-    background-color: #dc3545;
+    background-color: #fe7272;
     border: none;
     padding: 12px 25px;
     font-size: 1.1rem;
@@ -82,7 +82,7 @@ body {
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
+    background-color: #514F4F;
     transform: translateY(-3px);
 }
 
@@ -90,11 +90,19 @@ body {
     margin-top: 10rem;
 }
 
+.product-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 /* Reviews Section */
 .reviews-section {
     margin-top: 40px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -102,7 +110,7 @@ body {
 .reviews-section h4 {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #333;
+    color: #fe7272;
     margin-bottom: 20px;
     border-bottom: 2px solid #007bff;
     display: inline-block;
@@ -131,7 +139,7 @@ body {
 .review h5 {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #007bff;
+    color: #fe7272;
     margin-bottom: 8px;
 }
 
@@ -151,24 +159,29 @@ form textarea {
     transition: box-shadow 0.3s ease;
 }
 
-form textarea:focus {
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
-    border-color: #007bff;
-    outline: none;
+.checked {
+    color: orange;
 }
 
-form button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
 }
 
-form button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+.star-rating input {
+    display: none;
 }
+
+.star-rating label {
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: orange;
+}
+

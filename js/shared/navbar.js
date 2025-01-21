@@ -15,6 +15,7 @@ function loadNavbar(isLoggedIn) {
             return response.text();
         })
         .then(data => {
+            console.log(data);
             document.getElementById('navbar-placeholder').innerHTML = data;
 
             const logoutButton = document.getElementById('logout-button');

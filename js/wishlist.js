@@ -38,7 +38,7 @@ const fetchWishlist = () => {
                 ${stockStatus ? "" : "disabled"}
                 onclick="window.addToCart('${key}')"
               >
-              <a href="checkout.html">
+              <a href="../html/checkout.html?cardId=productid14">
                 Buy Now
                 
               </button>

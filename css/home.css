@@ -11,41 +11,43 @@
     --background-image: linear-gradient(144deg, #FF9A76, #FF6363 50%, #FF1E62);
     --colorwhite: #FFFFFF;
     --box-shadow4: 0 3px 5px rgba(0, 0, 0, 0.2);
---colorred:rgb(255, 8, 8);
+    --colorred: rgb(255, 8, 8);
 
 }
 
 /* text in slider */
-.carousel-caption
- {
-font-family: cursive;
-color: var(--colorred);
-font-size: 3rem;
+.carousel-caption {
+    font-family: cursive;
+    color: var(--colorred);
+    font-size: 3rem;
     height: fit-content;
+
+
 }
 
 
 
-#welcome{
+#welcome {
     height: fit-content;
-font-size: 3rem;
-font-family: cursive;
-text-align: left;
+    font-size: 3rem;
+    font-family: cursive;
+
+    width: 50%;
 
 }
 
-#yellow{
+#yellow {
     height: fit-content;
-        font-size: 2rem;
-        font-family: cursive;
-color: var(--colorwhite);
+    font-size: 2rem;
+    font-family: cursive;
+    color: var(--colorwhite);
 
-    
+
 }
 
-#sayit{
+#sayit {
 
-height: fit-content;
+    height: fit-content;
     font-size: 2rem;
     font-family: cursive;
     text-align: right;
@@ -54,35 +56,87 @@ height: fit-content;
 
 }
 
-
-
-/* slider */
-.container-item {
-    height: 600px;
-    
-}
-
-/* slider */
-.container-image {
-    height: 100%;
+/* Ensure the carousel images are responsive */
+.hero-carousel-img {
     object-fit: cover;
-    filter: brightness(0.6);
+    /* Ensures the image covers the entire container without distortion */
+    height: 80vh;
+    /* Adjusts the image height for large screens */
 }
 
-/* slider */
-
-/* slider */
-.c-item {
-    height: 600px;
-    
+/* Adjust the carousel caption for better visibility */
+.carousel-caption {
+    position: absolute;
+    bottom: 45%;
+    left: 40%;
+    transform: translateX(-50%);
+    color: var(--primary-color-dark);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 5);
 }
 
-/* slider */
-.c-img {
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
+/* Style the shop now button */
+.btn-flip-x {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: #DB4566;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 20%;
 
+}
+
+.btn-flip-x:hover {
+    background-color: #c33e56;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .hero-carousel-img {
+        height: 60vh;
+        /* Adjust the height for smaller screens */
+    }
+
+    .carousel-caption h1,
+    .carousel-caption p {
+        font-size: 1.5rem;
+        /* Adjust font size */
+        text-align: center;
+        /* Center align text for smaller screens */
+    }
+
+    .btn-flip-x {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-carousel-img {
+        height: 50vh;
+        /* Further adjust the height for very small screens */
+    }
+
+    .carousel-caption h1,
+    .carousel-caption p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .btn-flip-x {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Optional: Add custom styling for the carousel indicators */
+.carousel-indicators button {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicators .active {
+    background-color: #DB4566;
 }
 
 /* Products */
@@ -93,7 +147,7 @@ height: fit-content;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
-font-family: cursive;
+    font-family: cursive;
 
 
 
@@ -113,17 +167,17 @@ font-family: cursive;
 
 
 
-/* new arrival section */
-.blue-flower {
-    width: 400px;
-    height: 400px;
-}
+
 
 /* new arrival section */
 .new-arrivals-section {
     background-color: var(--background-color);
     padding: 50px 20px;
     border-radius: 10px;
+
+    margin-left: 8rem;
+    margin-right: 8rem;
+
 }
 
 /* new arrival section */
@@ -135,13 +189,6 @@ font-family: cursive;
     gap: 30px;
 }
 
-/* new arrival section */
-.new-arrivals-image img {
-    max-width: 250px;
-
-    border-radius: 10px;
-    box-shadow: var(--box-shadow2);
-}
 
 /* new arrival section */
 .new-arrivals-text {
@@ -174,6 +221,8 @@ font-family: cursive;
     .new-arrivals-text {
         max-width: 100%;
     }
+
+    
 }
 
 .column-md-4 {
@@ -201,6 +250,7 @@ font-family: cursive;
     display: flex;
     justify-content: center;
     margin-right: 4rem;
+    
 }
 
 
@@ -282,12 +332,14 @@ font-family: cursive;
 
 
 .containerparent {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
     padding: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10rem;
+
+
 }
 
 .container__left h1 {
@@ -364,6 +416,7 @@ font-family: cursive;
     .container {
         gap: 3rem;
     }
+ 
 }
 
 @media (width < 900px) {
@@ -419,6 +472,7 @@ font-family: cursive;
 .back-to-top:hover span {
     transform: translateY(-4px);
 }
+
 .btn-flip-x {
     opacity: 0.8;
     padding: 10px 20px;
@@ -484,22 +538,32 @@ font-family: cursive;
 
 
 .cardfetch {
-width: 20rem;
-height: fit-content;
-padding: 15px;
-margin-bottom: 20px;
-  background-color: #fff ; /* White background */
-  border: 1px solid #ddd ; /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  overflow: hidden; /* Ensure content stays inside the card */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  margin: 10px; /* Spacing around the card */
-  text-align: center; /* Center content */
-  position: relative; /* For hover animation */
+    width: 20rem;
+    height: fit-content;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    /* White background */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 10px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Ensure content stays inside the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions */
+    margin: 10px;
+    /* Spacing around the card */
+    text-align: center;
+    /* Center content */
+    position: relative;
+    /* For hover animation */
 
 
 }
+
 /* Image Styling */
 .card-img {
     width: 100%;
@@ -549,12 +613,12 @@ margin-bottom: 20px;
 
 
 
-#cards-containerz{
+#cards-containerz {
 
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 
 }
 
@@ -783,12 +847,14 @@ gap: 10px;
     /* محاذاة العناصر عموديًا */
     margin: 50px;
     /* مسافة حول القسم */
+
+    gap: 120px;
 }
 
 .category>div {
     text-align: center;
     /* جعل النص في وسط العنصر */
-    padding: 20px;
+    padding: 10px;
     /* مسافة داخلية للكارد */
     border: 2px solid #ddd;
     /* حافة خفيفة حول الكارد */
@@ -848,10 +914,108 @@ gap: 10px;
     width: 200px;
     height: 200px;
     border-radius: 50px;
-    
+
 }
 
 
 
 
 /* *********************************************************** */
+#cards-containerz {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.col-sm-6.col-md-4.col-lg-3 {
+    flex: 1 1 calc(25% - 20px);
+    /* جعل البطاقات بحجم 25% لكل صف */
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.img-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.box:hover .img-box img {
+    transform: scale(1.05);
+}
+
+.detail-box {
+    padding: 15px;
+}
+
+.detail-box h6 {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.detail-box h6 span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.description {
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.buy-now {
+    margin: 15px 0;
+    padding: 10px 20px;
+    background-color: var(--background);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: var(--primary-color-dark);
+}
+
+a.text-decoration-none {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+#whyshopus{
+
+margin-left: 7rem;
+margin-right: 7rem;
+
+
+}

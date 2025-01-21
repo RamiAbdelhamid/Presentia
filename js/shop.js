@@ -33,8 +33,8 @@ function displayProducts(data, filterCategory = "all", searchQuery = "") {
 
         const matchesSearch =
           searchQuery === "" ||
-          product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.description.toLowerCase().includes(searchQuery.toLowerCase());
+          product.title.toLowerCase().includes(searchQuery.toLowerCase())
+          ;
 
         if (matchesCategory && matchesSearch) {
           formattedData += `

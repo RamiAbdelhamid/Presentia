@@ -13,11 +13,10 @@ const profilePicture = document.getElementById('profile-picture');
 let selectedGender = "male";
 genderSelect.addEventListener('change', () => {
     selectedGender = genderSelect.value;
-    // Change the profile picture based on selected gender
     if (selectedGender === "male") {
         profilePicture.src = "../img/Man.png";
     } else if (selectedGender === "female") {
-        profilePicture.src = "../img/Women.png"; // Adjust path as needed
+        profilePicture.src = "../img/Women.png";
     }
 });
 
@@ -125,3 +124,70 @@ function showAlert(type, message) {
         alertContainer.innerHTML = ''; // Clear the alert after 5 seconds
     }, 5000);
 }
+
+// Function to fetch and display orders for the current user
+function fetchAndDisplayOrders() {
+    // Get the userId from localStorage
+    const userId = localStorage.getItem('userId');
+    if (!userId) {
+        alert('You are not logged in. Please log in to view your orders.');
+        return;
+    }
+
+    // Reference to the orders in Firebase
+    const ordersRef = ref(database, 'orders/' + userId);
+
+    // Fetch orders from Firebase
+    get(ordersRef)
+        .then((snapshot) => {
+            const cardBody = document.querySelector('.order');
+            if (snapshot.exists()) {
+                const orders = snapshot.val();
+                let ordersHTML = '';
+
+                // Loop through each order and construct HTML
+                for (const orderId in orders) {
+                    const { title, price, category } = orders[orderId];
+
+                    ordersHTML += `
+                        <div class="container bootdey">
+                            <div class="panel panel-default panel-order">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="../img/order2.png" class="media-object img-thumbnail" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span><strong>${title}</strong></span>
+                                                    <span class="label label-info">Order ID: ${orderId}</span><br />
+                                                    <strong>Cost:</strong> ${price}<br />
+                                                    <strong>Category:</strong> ${category}<br />
+                                                    <a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok mt-3" href="checkout.html" title="View">Buy Again</a>
+                                                    <br><br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Display the orders in the card-body div
+                cardBody.innerHTML = ordersHTML;
+            } else {
+                // No orders found
+                cardBody.innerHTML = 'No Data';
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching orders:', error);
+            alert('Failed to fetch orders. Please try again later.');
+        });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', fetchAndDisplayOrders);
